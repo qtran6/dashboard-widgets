@@ -1,0 +1,53 @@
+---
+---
+
+<script>
+// Get API key from server side .ENV file
+const APIKEY = import.meta.env.PUBLIC_WEATHER_API;
+
+// API endpoint URL
+const queryEndpoint = 'https://api.openweathermap.org/data/2.5/weather';
+// City
+const queryCity = 'Cheney';
+// Units for Farenheit
+const queryUnits = 'imperial';
+
+// URL query string
+const url = `${queryEndpoint}?q=${queryCity}&appid=${APIKEY}&units=${queryUnits}`;
+
+// Get DOM Elements
+const city = document.querySelector('.city');
+const temp = document.querySelector('.temp');
+const icon = document.querySelector('.icon');
+
+// Using fetch to get data
+fetch(url)
+.then( response => response.json() )
+.then( data => {
+
+  // Check-check: Is data good? 
+  console.log( data );
+  
+  // Get Container for Weather   
+  const weatherContainer = document.querySelector('.weather');
+    
+    // Set DOM Elements
+    city.textContent = data.name; 
+    temp.textContent = data.main.temp;
+
+    icon.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
+  
+});
+</script>
+
+
+<!-- Weather -->
+<section class="weather">
+
+      <h1>Weather</h1>
+      <data class="city">City</data>
+      <data class="temp">Temp</data>
+      <img class="icon" 
+      src="https://via.placeholder.com/150" alt="Placeholder">
+      
+</section>

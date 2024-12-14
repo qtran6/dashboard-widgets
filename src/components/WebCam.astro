@@ -1,0 +1,44 @@
+---
+---
+<script>
+    // Check-check: webcam.js file is loaded
+// console.log('Web Cam');
+
+// Get Video
+const video = document.querySelector("video");
+
+// Navigator object
+if (navigator.mediaDevices.getUserMedia) {
+  
+  navigator.mediaDevices
+	.getUserMedia({
+	  video: true
+	})
+	.then((stream) => (video.srcObject = stream))
+	.catch((error) => console.log(error));
+}
+</script>
+
+<style>
+
+/* Smart Mirror */
+video { 
+  
+  /* Position video      */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Stretch to fill viewport */
+    width: 100vw;
+    height: 100vh;
+    /* stack behind content     */
+    z-index: -1;
+    /* fill background with video    */
+  object-fit: cover;
+  object-position: center;
+  
+}
+</style>
+
+    <!-- Webcam Video -->
+    <video autoplay></video>

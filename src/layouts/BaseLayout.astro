@@ -11,14 +11,11 @@ import CityNameInput from "../components/CityNameInput.astro";
         <meta name="generator" content={Astro.generator} />
         <title>Dashboard Widgets</title>
     </head>
-    <body class="relative min-h-screen flex flex-col items-center justify-center">
-        <CityNameInput />
-        <main class="flex flex-col items-center justify-center gap-5 p-5 mt-10 rounded-lg">
-            <div class="bg-[url('/images/morning.jpg')] bg-cover bg-center h-screen w-screen fixed z-[-1]"></div>
-            <div class="flex justify-center items-center gap-20">
-                <slot class="slot-box p-4 bg-white bg-opacity-80 rounded-lg shadow-md" />
-            </div>
-        </main>        
+    <body class="relative min-h-screen flex flex-col items-center justify-center bg-powderblue gap-20">
+		<CityNameInput />
+		<main>
+			<slot />
+		</main>
         <TimeBasedBackground />
     </body>
 </html>

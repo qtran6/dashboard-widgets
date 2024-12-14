@@ -1,13 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* body {
+/* Custom styles for background images */
+body::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full border-none bg-cover bg-center z-[-1];
+}
+
+body.morning::before {
+    @apply bg-[url('images/morning.jpg')];
+}
+
+body.noon::before {
+    @apply bg-[url('images/noon.jpg')];
+}
+
+body.evening::before {
+    @apply bg-[url('images/evening.jpg')];
+}
+
+body.night::before {
+    @apply bg-[url('images/night.jpg')];
+}
+
+/* 
+body {
     background-color: powderblue;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
-  
-Background image
+
 body::before {
     content: "";
     position: absolute;
@@ -18,6 +42,7 @@ body::before {
     border: none;
     background-size: cover;
     background-position: center;
+    z-index: -1;
 }
 
 body.morning::before {
@@ -35,7 +60,7 @@ body.evening::before {
 body.night::before {
     background-image: url('images/night.jpg');
 }
-
+*/
 main {
     display: flex;
     gap: 20px;
@@ -43,13 +68,8 @@ main {
 
 section {
     flex: 1;
-    background-color: white;
     padding: 20px;
     margin: 10px;
     position: relative;
     border-radius: 10px;
-    opacity: 0.8;
-    overflow: hidden;
-}  */
-
-body {}
+} 

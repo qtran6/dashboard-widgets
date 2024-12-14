@@ -1,5 +1,5 @@
 /* Base font styles */
-main {
+body {
     font-family: "Roboto Mono", monospace;
     font-size: 30px;
     line-height: 1.5;

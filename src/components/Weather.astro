@@ -3,7 +3,7 @@
 
 <script>
 // Get API key from server side .ENV file
-const APIKEY = import.meta.env.PUBLIC_WEATHER_API;
+const APIKEY = "958844ff4b8f19f0602ff42a72cd7490";
 
 // API endpoint URL
 const queryEndpoint = 'https://api.openweathermap.org/data/2.5/weather';
@@ -36,7 +36,7 @@ fetch(url)
     temp.textContent = data.main.temp;
 
     icon.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
-  
+    
 });
 </script>
 

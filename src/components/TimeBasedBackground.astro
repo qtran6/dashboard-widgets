@@ -1,0 +1,19 @@
+---
+---
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hour = new Date().getHours();
+        const body = document.body;
+
+        if (hour >= 5 && hour < 10) {
+            body.classList.add('morning');
+        } else if (hour >= 10 && hour < 16) {
+            body.classList.add('noon');
+        } else if (hour >= 16 && hour < 20) {
+            body.classList.add('evening');
+        } else {
+            body.classList.add('night');
+        }
+    });
+</script>

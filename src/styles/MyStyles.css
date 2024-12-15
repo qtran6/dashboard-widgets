@@ -74,3 +74,12 @@ section {
     border-radius: 15px;
 } 
 
+section h1 {
+    @apply text-2xl font-bold mb-4 text-gray-800 ;
+}
+
+
+
+.seconds {
+    @apply text-[20px];
+}

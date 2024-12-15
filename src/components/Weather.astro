@@ -18,19 +18,20 @@
     // Get DOM Elements
     const cityElement = document.querySelector('.city');
     const tempElement = document.querySelector('.temp');
+    const feelsLikeElement = document.querySelector('.feels_like');
+    const weatherDescriptionElement = document.querySelector('.weather-description');
     const iconElement = document.querySelector('.icon');
   
     // Using fetch to get data
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        // Check-check: Is data good? 
-        console.log(data);
-  
         // Set DOM Elements
         cityElement.textContent = data.name;
         tempElement.textContent = data.main.temp;
+        feelsLikeElement.textContent = data.main.feels_like;
         iconElement.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
+        weatherDescriptionElement.textContent = data.weather[0].description;
       });
   };
   
@@ -53,10 +54,14 @@
 
 <section class="backdrop-blur-md bg-white/50">
 
-      <h1>Weather</h1>
-      <h2></h2>
+      <h1>WEATHER</h1>
       <data class="city">City</data>
-      <data class="temp">Temp</data>
+      <br>Temp: 
+      <data class="temp">Temp</data>°F
+      <br>Feels Like: 
+      <data class="feels_like">Feels Like</data>°F
+      <br>Weather: 
+      <data class="weather-description">Weather</data>
       <img class="icon" 
       src="https://via.placeholder.com/150" alt="Placeholder">
       

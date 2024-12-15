@@ -28,7 +28,7 @@ const theClockApp = () => {
   Format Data
   ************/
   // Get AM or PM
-  const gotAmOrPM = gotHours >= 12 ? 'PM' : 'AM';
+  const gotAmOrPM = gotHours >= 12 ? 'PM':'AM';
   // Get 12 hour format
   gotHours = gotHours % 12 || 12;
   // Optionally, append zero to single digit hours
@@ -72,10 +72,9 @@ const theClockApp = () => {
 </script>
 
 <section class="backdrop-blur-md bg-white/50">
-  <h1>Time</h1>
+  <h1>TIME</h1>
   <time>
-    <data class="hours">HH</data> : <data class="minutes">MM</data> :
-    <data class="seconds">SS</data>
+    <data class="hours">HH</data>:<data class="minutes">MM</data>:<data class="seconds">SS</data>
     <data class="amOrPM">AM/PM</data>
   </time>
 </section>

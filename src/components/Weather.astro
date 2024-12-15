@@ -2,45 +2,49 @@
 ---
 
 <script>
-// API KEY
-const API_KEY = import.meta.env.PUBLIC_API_KEY;
-
-// API endpoint URL
-const queryEndpoint = 'https://api.openweathermap.org/data/2.5/weather';
-// City
-import CityNameInput from "./CityNameInput.astro";
-const queryCity = CityNameInput;
-
-// Units for Farenheit
-const queryUnits = 'imperial';
-
-// URL query string
-const url = `${queryEndpoint}?q=${queryCity}&appid=${API_KEY}&units=${queryUnits}`;
-
-// Get DOM Elements
-const city = document.querySelector('.city');
-const temp = document.querySelector('.temp');
-const icon = document.querySelector('.icon');
-
-// Using fetch to get data
-fetch(url)
-.then( response => response.json() )
-.then( data => {
-
-  // Check-check: Is data good? 
-  console.log( data );
+  // API KEY
+  const API_KEY = import.meta.env.PUBLIC_API_KEY;
   
-  // Get Container for Weather   
-  const weatherContainer = document.querySelector('.weather');
-    
-    // Set DOM Elements
-    city.textContent = data.name; 
-    temp.textContent = data.main.temp;
-
-    icon.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
-    
-});
-</script>
+  // API endpoint URL
+  const queryEndpoint = 'https://api.openweathermap.org/data/2.5/weather';
+  
+  // Units for Farenheit
+  const queryUnits = 'imperial';
+  
+  // Function to fetch weather data
+  const fetchWeather = (city) => {
+    const url = `${queryEndpoint}?q=${city}&appid=${API_KEY}&units=${queryUnits}`;
+  
+    // Get DOM Elements
+    const cityElement = document.querySelector('.city');
+    const tempElement = document.querySelector('.temp');
+    const iconElement = document.querySelector('.icon');
+  
+    // Using fetch to get data
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // Check-check: Is data good? 
+        console.log(data);
+  
+        // Set DOM Elements
+        cityElement.textContent = data.name;
+        tempElement.textContent = data.main.temp;
+        iconElement.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
+      });
+  };
+  
+  // Event listener for city input
+  document.addEventListener('DOMContentLoaded', () => {
+    const cityInput = document.getElementById('cityNameInput');
+    cityInput.addEventListener('input', (event) => {
+      const city = (event.target as HTMLInputElement).value;
+      if (city) {
+        fetchWeather(city);
+      }
+    });
+  });
+  </script>
 
 
 <!-- Weather -->

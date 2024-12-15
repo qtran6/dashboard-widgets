@@ -1,5 +1,23 @@
 ---
-
 ---
 
-<input type="text" id="cityNameInput" name="cityName" placeholder="Enter city name" class="city-input" />
+<input type="text" id="cityNameInput" name="cityName" placeholder="Enter city name" class="city-input backdrop-blur-md bg-white/50 p-4 rounded-lg shadow-md" />
+
+<style>
+  .city-input {
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .city-input::placeholder {
+    color: rgb(77, 77, 77);
+  }
+
+  .city-input:focus {
+    border-color: powderblue;
+    outline: none;
+  }
+</style>

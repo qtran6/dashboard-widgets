@@ -8,19 +8,19 @@ body::before {
 }
 
 body.morning::before {
-    @apply bg-[url('public/images/morning.jpg')];
+    @apply bg-[url('/images/morning.jpg')];
 }
 
 body.noon::before {
-    @apply bg-[url('public/images/noon.jpg')];
+    @apply bg-[url('/images/noon.jpg')];
 }
 
 body.evening::before {
-    @apply bg-[url('public/images/evening.jpg')];
+    @apply bg-[url('/images/evening.jpg')];
 }
 
 body.night::before {
-    @apply bg-[url('public/images/night.jpg')];
+    @apply bg-[url('/images/night.jpg')];
 }
 
 /* 

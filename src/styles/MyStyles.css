@@ -8,7 +8,7 @@ body::before {
 }
 
 body.morning::before {
-    @apply bg-[url('https://www.vecteezy.com/photo/30461195-an-aesthetic-studio-coffee-shop-interior-featuring-a-coffee-cup-and-plant-a-coffee-cup-and-plant-on-a-table')];
+    @apply bg-[url('images/morning.jpg')];
 }
 
 body.noon::before {
@@ -16,7 +16,7 @@ body.noon::before {
 }
 
 body.evening::before {
-    @apply bg-[url('https://4kwallpapers.com/images/walls/thumbs_3t/1543.jpg')];
+    @apply bg-[url('images/evening.jpg')];
 }
 
 body.night::before {
